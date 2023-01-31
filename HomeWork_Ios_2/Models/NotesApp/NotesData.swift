@@ -9,6 +9,6 @@ import Foundation
 //сделаю тюплом но думаю можно и структурой
     
 var modelNotes: [(titleNote: String, time: String, date: String)] = [
-                        (titleNote: "a", timeSetup(), dateSetup()),
-                        (titleNote: "b", timeSetup(), dateSetup())]
+                        (titleNote: "a", timeSetup(), dateSetup()
+                        )]
 
