@@ -44,6 +44,16 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource{
         cell.timeLabe.text = modelNotes[indexPath.row].time
         return cell
     }
+    //MARK: - delete cell with swipe:
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        tableView.beginUpdates()
+        modelNotes.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .left)
+        tableView.endUpdates()
+    }
 }
