@@ -17,6 +17,7 @@ class TipsCalculator: UIViewController, UITextFieldDelegate {
     let toolBar = UIToolbar()
     let slider = UISlider()
     let buttonDismiss = UIButton()
+    var amt: Int = 0
     
     var price: Double = 0
     var num:Int = 25
@@ -46,15 +47,16 @@ class TipsCalculator: UIViewController, UITextFieldDelegate {
     func textFieldSetup(){
 
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "$ 0.00"
+        textField.placeholder = "$0.00"
         textField.borderStyle = .roundedRect
         textField.inputAccessoryView = toolBar
-        textField.keyboardType = .numberPad
+        textField.keyboardType = .decimalPad
         textField.textAlignment = .right
         textField.delegate = self
         textField.keyboardAppearance = .default
         textField.clearButtonMode = .always
         textField.font = UIFont(name: "Copperplate-Bold" ,size: 40)
+ 
         
         
         view.addSubview(textField)
@@ -103,6 +105,7 @@ class TipsCalculator: UIViewController, UITextFieldDelegate {
                                          target: self,
                                          action: #selector(buttonDoneSelector))
         toolBar.setItems([flexibleSpace, buttonDone], animated: true)
+
     }
     //MARK: - slider setup
     func sliderSetup(){
@@ -111,6 +114,7 @@ class TipsCalculator: UIViewController, UITextFieldDelegate {
         //slider.frame = CGRect(x: 15, y: 300, width: width, height: 0)
         slider.translatesAutoresizingMaskIntoConstraints = false
         //slider.center = view.center
+        slider.isEnabled = false
         slider.minimumValue = 0
         slider.maximumValue = 50
         slider.value = Float(num)
@@ -165,18 +169,33 @@ class TipsCalculator: UIViewController, UITextFieldDelegate {
     }
     @objc func buttonDoneSelector(_ sender: UIBarButtonItem){
         textField.resignFirstResponder()
+        slider.isEnabled = true
+        
+        if textField.text?.first == "$" {
+            textField.text!.remove(at: textField.text!.startIndex)
+                } else if textField.text?.first == nil {
+                    textField.text = "(0)"
+                }
+        price = Double(textField.text!) ?? Double(0.0)
+        textField.text = String(format: "$%.2f", price)
+     //   String(format: "$%.2f", totalPrice)
     }
     
     @objc func sliderAction(sender: UISlider) {
         num = Int(sender.value)
         
-        let tipPrice: Double = price * Double(num) / 100
-        let totalPrice: Double = price + tipPrice
-
+        var tipPrice: Double = price * Double(num) / 100
         
+        //округление: 1 0.5 2
+        tipPrice = round(tipPrice * 20.00) / 20.00
+
+        let totalPrice: Double = price + tipPrice
+        // отправляем в лейблы
         lableTip.text = "Tip (\(num)%)"
-        lableCash.text = "$ \(tipPrice)"
-        lableTotalCash.text = "$ \(totalPrice)"
+        
+        //попробовал через формат String(format: "%.2f", ...)
+        lableCash.text = String(format: "$%.2f", tipPrice)
+        lableTotalCash.text = String(format: "$%.2f", totalPrice) //попробовал через формат String(format: "%.2f", ...)
     }
 
     
@@ -186,10 +205,12 @@ class TipsCalculator: UIViewController, UITextFieldDelegate {
          
         let tipPrice:Double = price * Double(num) / 100
         let totalPrice: Double = price + tipPrice
-         
+        
         lableTip.text = "Tip (\(num)%)"
         lableCash.text = "$ \(tipPrice)"
         lableTotalCash.text = "$ \(totalPrice)"
+         
+        
      }
     //Dismiss button
     @objc func backFunc(){
