@@ -47,6 +47,7 @@ class CellTableViewNote: UITableViewCell {
         contentView.addSubview(noteLable)
         noteLable.textColor = .black
         noteLable.text = "some text"
+        noteLable.numberOfLines = 2
         noteLable.sizeToFit()
         noteLable.translatesAutoresizingMaskIntoConstraints = false
     //MARK: - Text func
@@ -75,7 +76,7 @@ class CellTableViewNote: UITableViewCell {
         contentView.addSubview(countryLable)
         countryLable.font = UIFont(name: "Copperplate-Bold" ,size: 15)
         countryLable.textColor = .black
-        countryLable.text = "country"
+    //    countryLable.text = "country"
         countryLable.translatesAutoresizingMaskIntoConstraints = false
     }
     //MARK: - CityLable
