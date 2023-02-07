@@ -13,9 +13,12 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
     let backButton = BackButton()
     let findButton = FindButton()
     let textField = UITextField()
+    let lableLocation = LableLocation()
     let toolBar = UIToolbar()
     
     var textFromTextField: String = ""
+    var countryMy: String = ""
+    var cityMy: String = ""
     //LocationManager :
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
@@ -30,10 +33,11 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
         backButtonSettings()
         fundButtonSetting()
         textFieldSetup()
+        lableLocationSetting()
         geocoder = CLGeocoder() //Геокодер
         locationManagerSetup() // Менеджер локации
-                            // реверс геокодера
-        
+                        
+        changeLocationBttnTapped() // find location func
         constraines()
 
     }
@@ -44,6 +48,9 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
     func fundButtonSetting(){
         view.addSubview(findButton)
         findButton.addTarget(self, action: #selector(reverseGeocodeLocationBttnTapped), for: .touchUpInside)
+    }
+    func lableLocationSetting(){
+        view.addSubview(lableLocation)
     }
     //MARK: - text field settings
         func textFieldSetup(){
@@ -92,6 +99,10 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
             findButton.topAnchor.constraint(equalTo: textField.bottomAnchor,constant: 30),
             findButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             findButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            lableLocation.topAnchor.constraint(equalTo: findButton.bottomAnchor,constant: 30),
+            lableLocation.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            lableLocation.heightAnchor.constraint(equalToConstant: 50),
             ])
             }
     //MARK: - Location manager setup:
@@ -99,7 +110,7 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
             locationManager = CLLocationManager()
             locationManager.delegate = self
         }
-    
+    //Geocoder - получаем координаты локации при подтверждении пользователя :
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         // Create a switch statement for the CLLocationManager.authorizationStatus() value
         switch CLLocationManager.authorizationStatus() {
@@ -121,9 +132,9 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
                 locationManager.requestWhenInUseAuthorization()
             }
         }
-        
+        // функция реверса(перевод из координат в имя
     @objc   func reverseGeocodeLocationBttnTapped(_ sender: Any?) {
-            changeLocationBttnTapped()
+            
             guard let currentLocation = self.currentLocation else {
                 print("Unable to reverse-geocode location.")
                 return
@@ -143,7 +154,9 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
                 guard let country = placemark.country else {return}
                 
                 DispatchQueue.main.async {
-//                    self.locationDataLbl.text = " \(city), \(country)"
+                    self.lableLocation.text = " \(city) \n \(country)"
+                    self.countryMy = "\(country)"
+                    self.cityMy = "\(city)"
                     print("\(city), \(country)")
                 }
             }
@@ -152,7 +165,7 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
         
 
                                     
-    //MARK: - функция назад для кнопки
+    //MARK: - функция "назад" для кнопки
     @objc func backToNotesFunc(_ textField: UITextField){
         let viewcontroller = NotesViewController()
         let time = timeSetup()
@@ -160,7 +173,15 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
         
         viewcontroller.modalPresentationStyle = .fullScreen
         
-        modelNotes.append((titleNote: textFromTextField, time: time, date: date))
+        if textFromTextField.isEmpty { print("No data fore save in note") }
+        else{
+            modelNotes.append((titleNote: textFromTextField,
+                               time: time,
+                               date: date,
+                               countryL: countryMy,
+                               city: cityMy))
+        }
+        
         present(viewcontroller, animated: true) {
             print("Back to main Тotes")
             

@@ -42,6 +42,8 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource{
         cell.noteLable.text = modelNotes[indexPath.row].titleNote
         cell.dateLable.text = modelNotes[indexPath.row].date
         cell.timeLabe.text = modelNotes[indexPath.row].time
+        cell.countryLable.text = modelNotes[indexPath.row].countryL
+        cell.cityLable.text = modelNotes[indexPath.row].city
         return cell
     }
     //MARK: - delete cell with swipe:
