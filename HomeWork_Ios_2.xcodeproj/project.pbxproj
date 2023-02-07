@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0C12A129923B3A00C60F8D /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C12A029923B3A00C60F8D /* LocationButton.swift */; };
 		0E0F4C5C29657EED0090C487 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F4C5B29657EED0090C487 /* Collection.swift */; };
 		0E0F4C5E2965CE800090C487 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F4C5D2965CE7F0090C487 /* NotesViewController.swift */; };
 		0E0F4C602966D9880090C487 /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F4C5F2966D9880090C487 /* PhotosVC.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E0C12A029923B3A00C60F8D /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		0E0F4C5B29657EED0090C487 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		0E0F4C5D2965CE7F0090C487 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		0E0F4C5F2966D9880090C487 /* PhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosVC.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				0E3D84C52984028300B5D3E1 /* Date&Time.swift */,
 				0E3D84CA29841E7C00B5D3E1 /* EditButtonNote.swift */,
 				0E3D84CC2984503100B5D3E1 /* BackButton.swift */,
+				0E0C12A029923B3A00C60F8D /* LocationButton.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				0E6C4DFD295E45250092BB94 /* ViewController.swift in Sources */,
 				0E3D84C22983E42D00B5D3E1 /* TableView+Note.swift in Sources */,
 				0E0F4C5E2965CE800090C487 /* NotesViewController.swift in Sources */,
+				0E0C12A129923B3A00C60F8D /* LocationButton.swift in Sources */,
 				0E6C4DDD295B72310092BB94 /* TapOrHoldVC.swift in Sources */,
 				0E0F4C6229672C550090C487 /* ImagesCell.swift in Sources */,
 				0E3D84CD2984503100B5D3E1 /* BackButton.swift in Sources */,
@@ -386,6 +390,7 @@
 				DEVELOPMENT_TEAM = 5N9H52BYY7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HomeWork_Ios_2/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешите доступ к вашей локации";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -414,6 +419,7 @@
 				DEVELOPMENT_TEAM = 5N9H52BYY7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HomeWork_Ios_2/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешите доступ к вашей локации";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
