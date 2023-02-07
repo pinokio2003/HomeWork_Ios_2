@@ -9,7 +9,9 @@ import UIKit
 
 class NotesViewController: UIViewController {
     
-    let editButton = EditButtonNote()
+    let addButton = AddNoteButtonNote()
+    let editButton = AddEditButton()
+    let removeAll = RemoveAllButton()
     let buttonDismiss = UIButton()
     var tableView = UITableView()
     
@@ -20,24 +22,35 @@ class NotesViewController: UIViewController {
         view.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
         view.addSubview(tableView)
         
-//        tableView.beginUpdates()
-//        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-//        tableView.endUpdates()
+
         
         setupTableView()
+        addButtonSetup()
         editButtonSetup()
+//        removeAllSetup()
         buttonDismissSettings()
         constraine()
         
     }
     
-//MARK: - editButton setup:
+//MARK: - buttons setup:
+    //addButton setup
+    func addButtonSetup(){
+        view.addSubview(addButton)
+        addButton.addTarget(self, action: #selector(addButtonFunc), for: .touchUpInside)
+    }
+    //editButton setup:
     func editButtonSetup(){
         view.addSubview(editButton)
         editButton.addTarget(self, action: #selector(editButtonFunc), for: .touchUpInside)
     }
-    
-//MARK: - Dismiss button
+    //removeAll setup:
+//        func removeAllSetup(){
+//            view.addSubview(removeAll)
+//            removeAll.addTarget(self, action: #selector(removeAllselector), for: .touchUpInside)
+//
+//        }
+    //Dismiss button
     
     func buttonDismissSettings(){
         buttonDismiss.translatesAutoresizingMaskIntoConstraints = false
@@ -56,10 +69,20 @@ class NotesViewController: UIViewController {
             buttonDismiss.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
             buttonDismiss.heightAnchor.constraint(equalToConstant: 10),
             
-            editButton.widthAnchor.constraint(equalToConstant: 45 ),
-            editButton.heightAnchor.constraint(equalToConstant: 40),
-            editButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            editButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15)
+            addButton.widthAnchor.constraint(equalToConstant: 45 ),
+            addButton.heightAnchor.constraint(equalToConstant: 40),
+            addButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
+            
+            editButton.widthAnchor.constraint(equalToConstant: 35 ),
+            editButton.heightAnchor.constraint(equalToConstant: 35),
+            editButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 2),
+            editButton.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -15),
+            
+//            removeAll.widthAnchor.constraint(equalToConstant: 35 ),
+//            removeAll.heightAnchor.constraint(equalToConstant: 35),
+//            removeAll.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 2),
+//            removeAll.rightAnchor.constraint(equalTo: editButton.leftAnchor, constant: -15),
         ])
     }
               
@@ -71,12 +94,39 @@ class NotesViewController: UIViewController {
             print("Back to main")
         }
     }
-    //MARK: - Edit button переход для записей
-    @objc func editButtonFunc(){
+    //MARK: - Add button переход для записей
+    @objc func addButtonFunc(){
         let viewcontroller = EditNoteViewController()
         viewcontroller.modalPresentationStyle = .fullScreen
         present(viewcontroller, animated: true)
             print("Add note nenu")
         }
-    
+    //MARK: - Edit button переход для редактирования
+    @objc func editButtonFunc(_ sender: AddEditButton){
+        if tableView.isEditing{
+            tableView.setEditing(false, animated: true)
+            sender.setImage(UIImage(systemName: "staroflife"), for: .normal)
+            editButton.isEnabled = true
+            addButton.isHidden = false
+            removeAll.isHidden = true
+            //button remove constraine
+            
+        } else {
+            tableView.setEditing(true, animated: true)
+            sender.setImage(UIImage(systemName: "hand.thumbsup"), for: .normal)
+
+            addButton.isHidden = false
+            editButton.isEnabled = true
+            removeAll.isHidden = false
+        }
+        
+    }
+  //MARK: - Selector remove all
+    @objc func removeAllselector(){
+        tableView.beginUpdates()
+        modelNotes.removeAll()
+        tableView.endUpdates()
+        print("All removed")
+        }
 }
+

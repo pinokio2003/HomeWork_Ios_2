@@ -1,5 +1,5 @@
 //
-//  EditButtonNote.swift
+//  AddNoteButtonNote.swift
 //  HomeWork_Ios_2
 //
 //  Created by Anatolii Kravchuk on 27.01.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditButtonNote: UIButton{
+class AddNoteButtonNote: UIButton{
     
     let buttonEdit = UIButton()
 
@@ -33,12 +33,4 @@ class EditButtonNote: UIButton{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        let textForNotes = textField
-//
-//
-//        modelNotes.append((titleNote: String(textField) ))
-//        
-//    }
 }

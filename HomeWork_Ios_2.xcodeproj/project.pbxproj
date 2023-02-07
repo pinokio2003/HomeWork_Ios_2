@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0E0C12A129923B3A00C60F8D /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C12A029923B3A00C60F8D /* LocationButton.swift */; };
 		0E0C12A3299243F900C60F8D /* LableLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C12A2299243F900C60F8D /* LableLocation.swift */; };
+		0E0C12A52992886500C60F8D /* AddEditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C12A42992886500C60F8D /* AddEditButton.swift */; };
+		0E0C12A82992A35B00C60F8D /* RemoveAllNotesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C12A72992A35B00C60F8D /* RemoveAllNotesButton.swift */; };
 		0E0F4C5C29657EED0090C487 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F4C5B29657EED0090C487 /* Collection.swift */; };
 		0E0F4C5E2965CE800090C487 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F4C5D2965CE7F0090C487 /* NotesViewController.swift */; };
 		0E0F4C602966D9880090C487 /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F4C5F2966D9880090C487 /* PhotosVC.swift */; };
@@ -19,7 +21,7 @@
 		0E3D84C42983E45500B5D3E1 /* CellTableView+Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84C32983E45500B5D3E1 /* CellTableView+Note.swift */; };
 		0E3D84C62984028300B5D3E1 /* Date&Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84C52984028300B5D3E1 /* Date&Time.swift */; };
 		0E3D84C929841E4300B5D3E1 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84C829841E4300B5D3E1 /* EditNoteViewController.swift */; };
-		0E3D84CB29841E7C00B5D3E1 /* EditButtonNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84CA29841E7C00B5D3E1 /* EditButtonNote.swift */; };
+		0E3D84CB29841E7C00B5D3E1 /* AddNoteButtonNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84CA29841E7C00B5D3E1 /* AddNoteButtonNote.swift */; };
 		0E3D84CD2984503100B5D3E1 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84CC2984503100B5D3E1 /* BackButton.swift */; };
 		0E6C4DD9295B72310092BB94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C4DD8295B72310092BB94 /* AppDelegate.swift */; };
 		0E6C4DDD295B72310092BB94 /* TapOrHoldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C4DDC295B72310092BB94 /* TapOrHoldVC.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		0E0C12A029923B3A00C60F8D /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		0E0C12A2299243F900C60F8D /* LableLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LableLocation.swift; sourceTree = "<group>"; };
+		0E0C12A42992886500C60F8D /* AddEditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditButton.swift; sourceTree = "<group>"; };
+		0E0C12A72992A35B00C60F8D /* RemoveAllNotesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAllNotesButton.swift; sourceTree = "<group>"; };
 		0E0F4C5B29657EED0090C487 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		0E0F4C5D2965CE7F0090C487 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		0E0F4C5F2966D9880090C487 /* PhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosVC.swift; sourceTree = "<group>"; };
@@ -44,7 +48,7 @@
 		0E3D84C32983E45500B5D3E1 /* CellTableView+Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellTableView+Note.swift"; sourceTree = "<group>"; };
 		0E3D84C52984028300B5D3E1 /* Date&Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date&Time.swift"; sourceTree = "<group>"; };
 		0E3D84C829841E4300B5D3E1 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
-		0E3D84CA29841E7C00B5D3E1 /* EditButtonNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButtonNote.swift; sourceTree = "<group>"; };
+		0E3D84CA29841E7C00B5D3E1 /* AddNoteButtonNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteButtonNote.swift; sourceTree = "<group>"; };
 		0E3D84CC2984503100B5D3E1 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		0E6C4DD5295B72310092BB94 /* HomeWork_Ios_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork_Ios_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6C4DD8295B72310092BB94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0C12A62992A30600C60F8D /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				0E3D84CA29841E7C00B5D3E1 /* AddNoteButtonNote.swift */,
+				0E0C12A029923B3A00C60F8D /* LocationButton.swift */,
+				0E3D84CC2984503100B5D3E1 /* BackButton.swift */,
+				0E0C12A42992886500C60F8D /* AddEditButton.swift */,
+				0E0C12A72992A35B00C60F8D /* RemoveAllNotesButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		0E3D84B92982E97700B5D3E1 /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,12 +96,10 @@
 		0E3D84BA2982EC4200B5D3E1 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				0E0C12A62992A30600C60F8D /* Button */,
 				0E3D84C12983E42D00B5D3E1 /* TableView+Note.swift */,
 				0E3D84C32983E45500B5D3E1 /* CellTableView+Note.swift */,
 				0E3D84C52984028300B5D3E1 /* Date&Time.swift */,
-				0E3D84CA29841E7C00B5D3E1 /* EditButtonNote.swift */,
-				0E3D84CC2984503100B5D3E1 /* BackButton.swift */,
-				0E0C12A029923B3A00C60F8D /* LocationButton.swift */,
 				0E0C12A2299243F900C60F8D /* LableLocation.swift */,
 			);
 			path = Notes;
@@ -239,10 +253,12 @@
 				0E3D84C62984028300B5D3E1 /* Date&Time.swift in Sources */,
 				0E8CE583295EF87200A5E0B9 /* TipsCalculator.swift in Sources */,
 				0E6C4DF0295B731F0092BB94 /* TimeAndDate.swift in Sources */,
+				0E0C12A52992886500C60F8D /* AddEditButton.swift in Sources */,
 				0E3D84B82982E8AC00B5D3E1 /* NotesData.swift in Sources */,
-				0E3D84CB29841E7C00B5D3E1 /* EditButtonNote.swift in Sources */,
+				0E3D84CB29841E7C00B5D3E1 /* AddNoteButtonNote.swift in Sources */,
 				0E3D84C42983E45500B5D3E1 /* CellTableView+Note.swift in Sources */,
 				0E6C4DFD295E45250092BB94 /* ViewController.swift in Sources */,
+				0E0C12A82992A35B00C60F8D /* RemoveAllNotesButton.swift in Sources */,
 				0E3D84C22983E42D00B5D3E1 /* TableView+Note.swift in Sources */,
 				0E0F4C5E2965CE800090C487 /* NotesViewController.swift in Sources */,
 				0E0C12A129923B3A00C60F8D /* LocationButton.swift in Sources */,
