@@ -45,6 +45,7 @@ class TapOrHoldVC: UIViewController {
     //maine button
     func buttonStartSettings(){
         buttonStart.translatesAutoresizingMaskIntoConstraints = false
+        buttonStart.configuration = .bordered()
         buttonStart.setTitle("""
                               TAP
                               OR

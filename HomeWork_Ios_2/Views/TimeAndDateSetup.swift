@@ -24,6 +24,17 @@ extension TimeAndDate{
         lableDate.text = dateSetup()
     }
     
+    @objc func cancelTimer() {
+        timer.invalidate()
+        lableTime.text = timeSetup()
+        lableDate.text = dateSetup()
+        timer = Timer.scheduledTimer(timeInterval: 5,
+                                     target: self,
+                                     selector: #selector(second),
+                                     userInfo: nil,
+                                     repeats: true)
+        }
+    
     //Format date - для того чтою lable.text мог принять String
     func dateSetup() -> String {
         let dateFormate = DateFormatter()

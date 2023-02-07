@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import CoreLocation
 
-class EditNoteViewController: UIViewController, UITextFieldDelegate {
+class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
 
     let backButton = BackButton()
+    let findButton = FindButton()
     let textField = UITextField()
     let toolBar = UIToolbar()
     
     var textFromTextField: String = ""
+    //LocationManager :
+    var locationManager: CLLocationManager!
+    var currentLocation: CLLocation!
+    var geocoder: CLGeocoder!
     
     
     override func viewDidLoad() {
@@ -22,7 +28,11 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
         
         backButtonSettings()
+        fundButtonSetting()
         textFieldSetup()
+        geocoder = CLGeocoder() //Геокодер
+        locationManagerSetup() // Менеджер локации
+                            // реверс геокодера
         
         constraines()
 
@@ -30,6 +40,10 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate {
     func backButtonSettings(){
         view.addSubview(backButton)
         backButton.addTarget(self, action: #selector(backToNotesFunc), for: .touchUpInside)
+    }
+    func fundButtonSetting(){
+        view.addSubview(findButton)
+        findButton.addTarget(self, action: #selector(reverseGeocodeLocationBttnTapped), for: .touchUpInside)
     }
     //MARK: - text field settings
         func textFieldSetup(){
@@ -73,9 +87,70 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate {
             textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 40),
             textField.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 5),
             textField.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -5),
-            textField.heightAnchor.constraint(equalToConstant: 60)
+            textField.heightAnchor.constraint(equalToConstant: 60),
+            
+            findButton.topAnchor.constraint(equalTo: textField.bottomAnchor,constant: 30),
+            findButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            findButton.heightAnchor.constraint(equalToConstant: 50),
             ])
             }
+    //MARK: - Location manager setup:
+    func locationManagerSetup(){
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+        }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // Create a switch statement for the CLLocationManager.authorizationStatus() value
+        switch CLLocationManager.authorizationStatus() {
+            // Compare the switch value to the authorizedWhenInUse case
+        case .authorizedWhenInUse:
+            // Start reporting the user's location
+            locationManager.startUpdatingLocation()
+            guard let currentLocation = locationManager.location else { return }
+            self.currentLocation = currentLocation
+            print("LOCATION: \(currentLocation)")
+        default:
+            return
+        }
+    }
+        //функция для получения координатов (можно сделать селектором)
+        func changeLocationBttnTapped() {
+            if CLLocationManager.locationServicesEnabled() {
+                // Request when in use authorization status.
+                locationManager.requestWhenInUseAuthorization()
+            }
+        }
+        
+    @objc   func reverseGeocodeLocationBttnTapped(_ sender: Any?) {
+            changeLocationBttnTapped()
+            guard let currentLocation = self.currentLocation else {
+                print("Unable to reverse-geocode location.")
+                return
+            }
+            
+            geocoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) in
+                if let error = error {
+                    print(error)
+                }
+
+                guard let placemark = placemarks?.first else { return }
+//                guard let streetNumber = placemark.subThoroughfare else { return }
+//                guard let streetName = placemark.thoroughfare else { return }
+                guard let city = placemark.locality else { return }
+//                guard let state = placemark.administrativeArea else { return }
+//                guard let zipCode = placemark.postalCode else { return }
+                guard let country = placemark.country else {return}
+                
+                DispatchQueue.main.async {
+//                    self.locationDataLbl.text = " \(city), \(country)"
+                    print("\(city), \(country)")
+                }
+            }
+        }
+    
+        
+
                                     
     //MARK: - функция назад для кнопки
     @objc func backToNotesFunc(_ textField: UITextField){

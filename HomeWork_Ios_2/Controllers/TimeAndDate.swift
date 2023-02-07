@@ -69,7 +69,7 @@ class TimeAndDate: UIViewController {
         resetButton.titleLabel?.numberOfLines = 0
         resetButton.sizeToFit()
         resetButton.frame = CGRect(x: 10, y: 10, width: 90, height: 90)
-        resetButton.addTarget(self, action: #selector(second), for: .touchDown)
+        resetButton.addTarget(self, action: #selector(cancelTimer), for: .touchDown)
         
         view.addSubview(resetButton)
     }
