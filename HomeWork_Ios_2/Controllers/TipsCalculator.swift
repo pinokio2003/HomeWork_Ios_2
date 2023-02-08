@@ -179,6 +179,18 @@ class TipsCalculator: UIViewController, UITextFieldDelegate {
         price = Double(textField.text!) ?? Double(0.0)
         textField.text = String(format: "$%.2f", price)
      //   String(format: "$%.2f", totalPrice)
+        var tipPrice: Double = price * Double(num) / 100
+        
+        //округление: 1 0.5 2
+        tipPrice = round(tipPrice * 20.00) / 20.00
+
+        let totalPrice: Double = price + tipPrice
+        // отправляем в лейблы
+        lableTip.text = "Tip (\(num)%)"
+        
+        //попробовал через формат String(format: "%.2f", ...)
+        lableCash.text = String(format: "$%.2f", tipPrice)
+        lableTotalCash.text = String(format: "$%.2f", totalPrice) //попробовал через формат String(format: "%.2f", ...)
     }
     
     @objc func sliderAction(sender: UISlider) {

@@ -14,7 +14,7 @@ class LableLocation: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.text = "Location"
+        self.text = ""
         self.font = UIFont(name: "Copperplate-Bold" ,size: 20)
         self.numberOfLines = 0
         self.sizeToFit()

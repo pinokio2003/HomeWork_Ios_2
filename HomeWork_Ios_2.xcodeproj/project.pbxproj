@@ -31,6 +31,7 @@
 		0E6C4DF7295C3F170092BB94 /* TimeAndDateSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C4DF6295C3F170092BB94 /* TimeAndDateSetup.swift */; };
 		0E6C4DFD295E45250092BB94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C4DFC295E45250092BB94 /* ViewController.swift */; };
 		0E8CE583295EF87200A5E0B9 /* TipsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8CE582295EF87200A5E0B9 /* TipsCalculator.swift */; };
+		0EC9FCDA2993ABAA00A5BE29 /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC9FCD92993ABAA00A5BE29 /* ImagesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		0E6C4DF6295C3F170092BB94 /* TimeAndDateSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAndDateSetup.swift; sourceTree = "<group>"; };
 		0E6C4DFC295E45250092BB94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E8CE582295EF87200A5E0B9 /* TipsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCalculator.swift; sourceTree = "<group>"; };
+		0EC9FCD92993ABAA00A5BE29 /* ImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				0E3D84B72982E8AC00B5D3E1 /* NotesData.swift */,
+				0EC9FCD92993ABAA00A5BE29 /* ImagesModel.swift */,
 			);
 			path = NotesApp;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC9FCDA2993ABAA00A5BE29 /* ImagesModel.swift in Sources */,
 				0E6C4DF7295C3F170092BB94 /* TimeAndDateSetup.swift in Sources */,
 				0E0F4C602966D9880090C487 /* PhotosVC.swift in Sources */,
 				0E3D84C929841E4300B5D3E1 /* EditNoteViewController.swift in Sources */,

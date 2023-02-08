@@ -8,7 +8,8 @@
 import UIKit
 
 class PhotosVC: UIViewController {
-
+    
+    let imagesPlanet = planetImages
     let buttonDismiss = UIButton()
     
     let collectionView = UICollectionView(frame: .zero,
@@ -41,7 +42,7 @@ class PhotosVC: UIViewController {
         super.viewDidLayoutSubviews()
      //   collectionView.frame = view.bounds
         collectionView.frame = CGRect(x: 0,
-                                      y: 65,
+                                      y: 75,
                                       width: view.bounds.size.width,
                                       height: (view.bounds.size.height) - 80)
         collectionView.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
