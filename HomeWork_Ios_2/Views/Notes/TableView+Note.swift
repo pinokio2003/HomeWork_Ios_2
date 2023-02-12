@@ -10,6 +10,7 @@ import UIKit
 extension NotesViewController: UITableViewDelegate, UITableViewDataSource{
     
     
+    
     func setupTableView() {
         let tableView = UITableView(frame: .zero)
         tableView.register(CellTableViewNote.self, forCellReuseIdentifier: CellTableViewNote.identifire)
@@ -17,6 +18,8 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource{
         tableView.dataSource = self
         tableView.backgroundColor =  UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
         view.addSubview(tableView)
+        tableView.allowsMultipleSelection = false //Делает возможность выберать пару ячеек для редактирования
+        tableView.allowsMultipleSelectionDuringEditing = true //Делает возможность выберать пару ячеек для редактирования
         tableView.separatorColor = .green
         self.tableView = tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,8 +57,19 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         tableView.beginUpdates()
-        modelNotes.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
+        modelNotes.remove(at: indexPath.row)
         tableView.endUpdates()
+        
+//        if editingStyle == .delete{
+//
+//            tableView.beginUpdates()
+//            tableView.deleteRows(at: [indexPath], with: .left)
+//            modelNotes.remove(at: indexPath.row)
+//            tableView.endUpdates()
+//
+//
+//        }
     }
+
 }

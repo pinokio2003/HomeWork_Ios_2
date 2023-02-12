@@ -133,7 +133,7 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
             }
         }
         // функция реверса(перевод из координат в имя
-    @objc   func reverseGeocodeLocationBttnTapped(_ sender: Any?) {
+    @objc func reverseGeocodeLocationBttnTapped(_ sender: Any?) {
             
             guard let currentLocation = self.currentLocation else {
                 print("Unable to reverse-geocode location.")
@@ -167,7 +167,7 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
                                     
     //MARK: - функция "назад" для кнопки
     @objc func backToNotesFunc(_ textField: UITextField){
-        let viewcontroller = NotesViewController()
+        let viewcontroller = UINavigationController(rootViewController: NotesViewController())
         let time = timeSetup()
         let date = dateSetup()
         

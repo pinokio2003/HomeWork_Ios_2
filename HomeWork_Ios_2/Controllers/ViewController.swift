@@ -154,6 +154,11 @@ class ViewController: UIViewController {
         present(viewController, animated: true) {
             print("Tips Calculator")
         }
+        
+        
+        
+
+
     }
     @objc func tapOrHoldVC(){
         let viewController = TapOrHoldVC()
@@ -170,10 +175,11 @@ class ViewController: UIViewController {
         }
     }
     @objc func notesVC(){
-        let viewController = NotesViewController()
+        let viewController = UINavigationController(rootViewController: NotesViewController())
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true) {
         print("Notes")
+
             }
         }
     @objc func photoVC(){

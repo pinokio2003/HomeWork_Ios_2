@@ -68,6 +68,7 @@ class TapOrHoldVC: UIViewController {
         //buttonStart.backgroundColor = .white
         buttonStart.addTarget(self, action: #selector(timerStart), for: .touchDown)
         buttonStart.addTarget(self, action: #selector(timerStop), for: .touchUpInside)
+        buttonStart.addTarget(self, action: #selector(timerStop), for: .touchUpOutside)
         buttonStart.addTarget(self, action: #selector(simpleTuch), for: .touchUpInside)
         view.addSubview(buttonStart)
     }

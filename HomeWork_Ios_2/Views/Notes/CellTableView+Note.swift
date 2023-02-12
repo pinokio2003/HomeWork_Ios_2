@@ -28,6 +28,8 @@ class CellTableViewNote: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
+        self.selectionStyle = .gray // Цвет при выборе ячейки
+        
         self.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
         
         noteLableSetup()
@@ -42,6 +44,7 @@ class CellTableViewNote: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+ 
     //MARK: - noteLableSetup
     func noteLableSetup(){
         contentView.addSubview(noteLable)
