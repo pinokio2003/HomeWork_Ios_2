@@ -94,7 +94,7 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
             textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 40),
             textField.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 5),
             textField.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -5),
-            textField.heightAnchor.constraint(equalToConstant: 60),
+                textField.heightAnchor.constraint(equalToConstant: 60),
             
             findButton.topAnchor.constraint(equalTo: textField.bottomAnchor,constant: 30),
             findButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),

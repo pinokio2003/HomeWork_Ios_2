@@ -9,16 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let firstButton = UIButton()
-    let tapOrHold = UIButton()
-    let dateAndTime = UIButton()
-    let notes = UIButton()
-    let photosButton = UIButton()
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        view.backgroundColor = .customBackgroundColor
         firstButtonStp()
         tapOrHoldStp()
         dateAndTimeStp()
@@ -27,41 +22,52 @@ class ViewController: UIViewController {
         constraints()
     }
     
-    func firstButtonStp(){
-        firstButton.translatesAutoresizingMaskIntoConstraints = false
-        firstButton.setTitle("Tips Calculator",for: .normal)
-        firstButton.titleLabel?.font = UIFont(name: "Copperplate-Bold" ,size: 30)
-        firstButton.layer.backgroundColor = UIColor.clear.cgColor
-        firstButton.setTitleColor(.black, for: .normal)
-        firstButton.layer.cornerRadius = 47
-        firstButton.layer.borderColor = UIColor.black.cgColor
-        firstButton.layer.shadowColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 0.5).cgColor
-        firstButton.layer.shadowOpacity = 1
-        firstButton.layer.shadowRadius = 15
-        firstButton.layer.shadowOffset = CGSize(width: 10, height: 10)
-        firstButton.titleLabel?.numberOfLines = 0
-        firstButton.sizeToFit()
-        firstButton.addTarget(self, action: #selector(TipsCalculatorVC), for: .touchUpInside)
-        view.addSubview(firstButton)
+    let tipsCalculator: MenuButton = {
+        let tipsCalculator = MenuButton()
+        tipsCalculator.translatesAutoresizingMaskIntoConstraints = false
+        tipsCalculator.setTitle("Tips Calculator",for: .normal)
+        tipsCalculator.titleLabel?.font = UIFont(name: "Copperplate-Bold" ,size: 30)
+        tipsCalculator.layer.backgroundColor = UIColor.clear.cgColor
+        tipsCalculator.setTitleColor(.black, for: .normal)
+        tipsCalculator.layer.cornerRadius = 47
+        tipsCalculator.layer.borderColor = UIColor.black.cgColor
+        MenuButton.multiCornerRadius = 25
+        tipsCalculator.titleLabel?.numberOfLines = 0
+        tipsCalculator.sizeToFit()
+        return tipsCalculator
+    }()
+    
+   private func firstButtonStp(){
+        view.addSubview(tipsCalculator)
+       tipsCalculator.addTarget(self, action: #selector(TipsCalculatorVC), for: .touchDown)
+       tipsCalculator.addTarget(self, action: #selector(unTuchFunc), for: .touchUpInside)
+       tipsCalculator.addTarget(self, action: #selector(unTuchFunc), for: .touchUpOutside)
     }
-    func tapOrHoldStp(){
+        
+    let tapOrHold: MenuButton = {
+        let tapOrHold = MenuButton()
         tapOrHold.translatesAutoresizingMaskIntoConstraints = false
-        tapOrHold.setTitle("Tap of Hold",for: .normal)
+        tapOrHold.setTitle("Tap or Hold",for: .normal)
         tapOrHold.titleLabel?.font = UIFont(name: "Copperplate-Bold" ,size: 30)
         tapOrHold.layer.backgroundColor = UIColor.clear.cgColor
         tapOrHold.setTitleColor(.black, for: .normal)
         tapOrHold.layer.cornerRadius = 47
         tapOrHold.layer.borderColor = UIColor.black.cgColor
-        tapOrHold.layer.shadowColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 0.5).cgColor
-        tapOrHold.layer.shadowOpacity = 1
-        tapOrHold.layer.shadowRadius = 15
-        tapOrHold.layer.shadowOffset = CGSize(width: 10, height: 10)
+        MenuButton.multiCornerRadius = 25
         tapOrHold.titleLabel?.numberOfLines = 0
         tapOrHold.sizeToFit()
-        tapOrHold.addTarget(self, action: #selector(tapOrHoldVC), for: .touchUpInside)
-        view.addSubview(tapOrHold)
+        return tapOrHold
+    }()
+    
+   private func tapOrHoldStp(){
+       view.addSubview(tapOrHold)
+       tapOrHold.addTarget(self, action: #selector(tapOrHoldVC), for: .touchDown)
+       tapOrHold.addTarget(self, action: #selector(unTuchFunc), for: .touchUpInside)
+       tapOrHold.addTarget(self, action: #selector(unTuchFunc), for: .touchUpOutside)
     }
-    func dateAndTimeStp(){
+    
+    let dateAndTime: MenuButton = {
+        let dateAndTime = MenuButton()
         dateAndTime.translatesAutoresizingMaskIntoConstraints = false
         dateAndTime.setTitle("Date And Time",for: .normal)
         dateAndTime.titleLabel?.font = UIFont(name: "Copperplate-Bold" ,size: 30)
@@ -69,16 +75,20 @@ class ViewController: UIViewController {
         dateAndTime.setTitleColor(.black, for: .normal)
         dateAndTime.layer.cornerRadius = 47
         dateAndTime.layer.borderColor = UIColor.black.cgColor
-        dateAndTime.layer.shadowColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 0.5).cgColor
-        dateAndTime.layer.shadowOpacity = 1
-        dateAndTime.layer.shadowRadius = 15
-        dateAndTime.layer.shadowOffset = CGSize(width: 10, height: 10)
+        MenuButton.multiCornerRadius = 25
         dateAndTime.titleLabel?.numberOfLines = 0
         dateAndTime.sizeToFit()
-        dateAndTime.addTarget(self, action: #selector(dateAndTimeVC), for: .touchUpInside)
+        return dateAndTime
+    }()
+    
+    func dateAndTimeStp(){
         view.addSubview(dateAndTime)
+        dateAndTime.addTarget(self, action: #selector(dateAndTimeVC), for: .touchDown)
+        dateAndTime.addTarget(self, action: #selector(unTuchFunc), for: .touchUpInside)
+        dateAndTime.addTarget(self, action: #selector(unTuchFunc), for: .touchUpOutside)
     }
-    func NotesButtonStp(){
+    let notes: MenuButton = {
+        let notes = MenuButton()
         notes.translatesAutoresizingMaskIntoConstraints = false
         notes.setTitle("Notes",for: .normal)
         notes.titleLabel?.font = UIFont(name: "Copperplate-Bold" ,size: 30)
@@ -86,16 +96,20 @@ class ViewController: UIViewController {
         notes.setTitleColor(.black, for: .normal)
         notes.layer.cornerRadius = 47
         notes.layer.borderColor = UIColor.black.cgColor
-        notes.layer.shadowColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 0.5).cgColor
-        notes.layer.shadowOpacity = 1
-        notes.layer.shadowRadius = 15
-        notes.layer.shadowOffset = CGSize(width: 10, height: 10)
+        MenuButton.multiCornerRadius = 25
         notes.titleLabel?.numberOfLines = 0
         notes.sizeToFit()
-        notes.addTarget(self, action: #selector(notesVC), for: .touchUpInside)
+        return notes
+    }()
+    
+    func NotesButtonStp(){
         view.addSubview(notes)
+        notes.addTarget(self, action: #selector(notesVC), for: .touchDown)
+        notes.addTarget(self, action: #selector(unTuchFunc), for: .touchUpInside)
+        notes.addTarget(self, action: #selector(unTuchFunc), for: .touchUpOutside)
     }
-    func photosButtonStp(){
+    let photosButton: MenuButton = {
+        let photosButton = MenuButton()
         photosButton.translatesAutoresizingMaskIntoConstraints = false
         photosButton.setTitle("Photos",for: .normal)
         photosButton.titleLabel?.font = UIFont(name: "Copperplate-Bold" ,size: 30)
@@ -103,27 +117,28 @@ class ViewController: UIViewController {
         photosButton.setTitleColor(.black, for: .normal)
         photosButton.layer.cornerRadius = 47
         photosButton.layer.borderColor = UIColor.black.cgColor
-        photosButton.layer.shadowColor = UIColor(red: 225 / 255,
-                                                 green: 225 / 255,
-                                                 blue: 235 / 255,
-                                                 alpha: 0.5).cgColor
-        photosButton.layer.shadowOpacity = 1
-        photosButton.layer.shadowRadius = 15
-        photosButton.layer.shadowOffset = CGSize(width: 10, height: 10)
+        MenuButton.multiCornerRadius = 25
         photosButton.titleLabel?.numberOfLines = 0
         photosButton.sizeToFit()
-        photosButton.addTarget(self, action: #selector(photoVC), for: .touchUpInside)
+        return photosButton
+    }()
+    
+    func photosButtonStp(){
         view.addSubview(photosButton)
+        photosButton.addTarget(self, action: #selector(photoVC), for: .touchDown)
+        photosButton.addTarget(self, action: #selector(unTuchFunc), for: .touchUpInside)
+        photosButton.addTarget(self, action: #selector(unTuchFunc), for: .touchUpOutside)
+        
     }
     func constraints(){
         NSLayoutConstraint.activate([
-            firstButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            firstButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-            firstButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
-            firstButton.heightAnchor.constraint(equalToConstant: 50)
+            tipsCalculator.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            tipsCalculator.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+            tipsCalculator.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
+            tipsCalculator.heightAnchor.constraint(equalToConstant: 50)
         ])
         NSLayoutConstraint.activate([
-            tapOrHold.topAnchor.constraint(equalTo: firstButton.bottomAnchor, constant: 25),
+            tapOrHold.topAnchor.constraint(equalTo: tipsCalculator.bottomAnchor, constant: 25),
             tapOrHold.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
             tapOrHold.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
             tapOrHold.heightAnchor.constraint(equalToConstant: 50)
@@ -147,28 +162,30 @@ class ViewController: UIViewController {
             photosButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    // Move to enother VC:
+//MARK: - move to enother VC's func:
+    
     @objc func TipsCalculatorVC(){
+
         let viewController = TipsCalculator()
+        tuchFunc(tipsCalculator)
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true) {
             print("Tips Calculator")
         }
-        
-        
-        
-
-
     }
+    
     @objc func tapOrHoldVC(){
         let viewController = TapOrHoldVC()
+        tuchFunc(tapOrHold)
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true) {
             print("Tap or hold")
         }
     }
+    
     @objc func dateAndTimeVC(){
         let viewController = TimeAndDate()
+        tuchFunc(dateAndTime)
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true) {
             print("Time And Date")
@@ -177,6 +194,7 @@ class ViewController: UIViewController {
     @objc func notesVC(){
         let viewController = UINavigationController(rootViewController: NotesViewController())
         viewController.modalPresentationStyle = .fullScreen
+        tuchFunc(notes)
         present(viewController, animated: true) {
         print("Notes")
 
@@ -184,9 +202,24 @@ class ViewController: UIViewController {
         }
     @objc func photoVC(){
         let viewController = PhotosVC()
+        tuchFunc(photosButton)
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true) {
         print("Photos")
             }
         }
+    
+    //MARK: - Изменение настроек для анимации кнопки:
+    @objc func tuchFunc(_ sender: MenuButton){
+        sender.darkShadow.shadowOffset = CGSize(width: -7, height: -7)
+        sender.lightShadow.shadowOffset = CGSize(width: 10, height: 10)
+        sender.darkShadow.shadowOpacity = 0.15
+        sender.lightShadow.shadowOpacity = 0.5
+    }
+    @objc func unTuchFunc(_ sender: MenuButton){
+        sender.darkShadow.shadowOffset = CGSize(width: 10, height: 10)
+        sender.lightShadow.shadowOffset = CGSize(width: -7, height: -7)
+        sender.darkShadow.shadowOpacity = 0.15
+        sender.lightShadow.shadowOpacity = 0.5
+    }
 }

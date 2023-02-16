@@ -10,15 +10,14 @@ import UIKit
 
 class TapOrHoldVC: UIViewController {
     
-    var lable = UILabel()
-    var buttonStart = UIButton()
+    
     var buttonReset = UIButton()
     var buttonDismiss = UIButton()
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        view.backgroundColor = .customBackgroundColor
         runMethods()
     }
     
@@ -32,40 +31,47 @@ class TapOrHoldVC: UIViewController {
    
     }
     
-    // MARK: lable settings:
-    func lableSettings(){
+    // MARK: lable:
+    
+    let lable: LableInnerShadow = {
+        let lable = LableInnerShadow()
         lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.text = "\(num)"
-        lable.font = UIFont(name: "GillSans-Italic" ,size: 45)
+        lable.font = UIFont(name: "AvenirNext-Regular" ,size: 25)
         lable.textAlignment = .center
-        lable.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        
+        
+        return lable
+    }()
+    
+    func lableSettings(){
+        lable.text = "\(num)"
         view.addSubview(lable)
     }
+    
     //MARK: buttons:
     //maine button
-    func buttonStartSettings(){
+    
+    let buttonStart: MenuButton = {
+        let buttonStart = MenuButton()
         buttonStart.translatesAutoresizingMaskIntoConstraints = false
-        buttonStart.configuration = .bordered()
         buttonStart.setTitle("""
-                              TAP
-                              OR
-                              HOLD
-                             """,
-                             for: .normal)
-        buttonStart.titleLabel?.font = UIFont(name: "Copperplate-Bold" ,size: 30)
+                               TAP
+                               OR
+                             HOLD
+                            """,for: .normal)
+        buttonStart.titleLabel?.font = UIFont(name: "AvenirNext-Regular", size: 25)
         buttonStart.layer.backgroundColor = UIColor.clear.cgColor
-        buttonStart.setTitleColor(.black, for: .normal)
-        buttonStart.layer.cornerRadius = 47
+        buttonStart.setTitleColor(.darkText, for: .normal)
+        buttonStart.layer.cornerRadius = 0
         buttonStart.layer.borderColor = UIColor.black.cgColor
-        
-        buttonStart.layer.shadowColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 0.5).cgColor
-        buttonStart.layer.shadowOpacity = 1
-        buttonStart.layer.shadowRadius = 15
-        buttonStart.layer.shadowOffset = CGSize(width: 10, height: 10)
+        MenuButton.multiCornerRadius = 70
         buttonStart.titleLabel?.numberOfLines = 0
         buttonStart.sizeToFit()
-        
-        //buttonStart.backgroundColor = .white
+        return buttonStart
+    }()
+    
+    func buttonStartSettings(){
+
         buttonStart.addTarget(self, action: #selector(timerStart), for: .touchDown)
         buttonStart.addTarget(self, action: #selector(timerStop), for: .touchUpInside)
         buttonStart.addTarget(self, action: #selector(timerStop), for: .touchUpOutside)
@@ -98,15 +104,15 @@ class TapOrHoldVC: UIViewController {
     func constraines(){
         NSLayoutConstraint.activate([
             lable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200),
-            lable.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 140),
+            lable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             lable.widthAnchor.constraint(equalToConstant: 90),
             lable.heightAnchor.constraint(equalToConstant: 90)
         ])
         NSLayoutConstraint.activate([
             buttonStart.topAnchor.constraint(equalTo: lable.bottomAnchor, constant: 40),
-            buttonStart.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 140),
-            buttonStart.widthAnchor.constraint(equalToConstant: 112),
-            buttonStart.heightAnchor.constraint(equalToConstant: 112)
+            buttonStart.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonStart.widthAnchor.constraint(equalToConstant: 140),
+            buttonStart.heightAnchor.constraint(equalToConstant: 140)
         ])
         NSLayoutConstraint.activate([
             buttonReset.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -126,13 +132,18 @@ class TapOrHoldVC: UIViewController {
     
     //timer setup
     @objc func timerStart(){
+
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(second), userInfo: nil, repeats: true)
+        tuchFunc(buttonStart)
     }
+    
     @objc func simpleTuch(){
         num += 1
         lable.text = "\(num)"
+        unTuchFunc(buttonStart)
     }
     @objc func timerStop(){
+        unTuchFunc(buttonStart)
         timer.invalidate()
     }
     
@@ -140,6 +151,7 @@ class TapOrHoldVC: UIViewController {
         num += 1
         lable.text = "\(num)"
         print(num)
+        
     }
     @objc func reset(){
         timer.invalidate()
@@ -153,5 +165,22 @@ class TapOrHoldVC: UIViewController {
         present(viewcontroller, animated: true) {
             print("Back to main")
         }
+    }
+    
+    
+    
+    
+    //MARK: - Изменение настроек для анимации кнопки:
+    @objc func tuchFunc(_ sender: MenuButton){
+        sender.darkShadow.shadowOffset = CGSize(width: -7, height: -7)
+        sender.lightShadow.shadowOffset = CGSize(width: 10, height: 10)
+        sender.darkShadow.shadowOpacity = 0.15
+        sender.lightShadow.shadowOpacity = 0.5
+    }
+    @objc func unTuchFunc(_ sender: MenuButton){
+        sender.darkShadow.shadowOffset = CGSize(width: 10, height: 10)
+        sender.lightShadow.shadowOffset = CGSize(width: -7, height: -7)
+        sender.darkShadow.shadowOpacity = 0.15
+        sender.lightShadow.shadowOpacity = 0.5
     }
 }

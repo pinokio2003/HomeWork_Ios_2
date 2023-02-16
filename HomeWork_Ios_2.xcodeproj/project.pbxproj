@@ -30,6 +30,8 @@
 		0E6C4DF0295B731F0092BB94 /* TimeAndDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C4DEF295B731F0092BB94 /* TimeAndDate.swift */; };
 		0E6C4DF7295C3F170092BB94 /* TimeAndDateSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C4DF6295C3F170092BB94 /* TimeAndDateSetup.swift */; };
 		0E6C4DFD295E45250092BB94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C4DFC295E45250092BB94 /* ViewController.swift */; };
+		0E862DBD299E284000D37A9E /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E862DBC299E284000D37A9E /* MenuButton.swift */; };
+		0E862DC0299EB42400D37A9E /* LableField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E862DBF299EB42400D37A9E /* LableField.swift */; };
 		0E8CE583295EF87200A5E0B9 /* TipsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8CE582295EF87200A5E0B9 /* TipsCalculator.swift */; };
 		0EC9FCDA2993ABAA00A5BE29 /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC9FCD92993ABAA00A5BE29 /* ImagesModel.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		0E6C4DEF295B731F0092BB94 /* TimeAndDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAndDate.swift; sourceTree = "<group>"; };
 		0E6C4DF6295C3F170092BB94 /* TimeAndDateSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAndDateSetup.swift; sourceTree = "<group>"; };
 		0E6C4DFC295E45250092BB94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0E862DBC299E284000D37A9E /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		0E862DBF299EB42400D37A9E /* LableField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LableField.swift; sourceTree = "<group>"; };
 		0E8CE582295EF87200A5E0B9 /* TipsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCalculator.swift; sourceTree = "<group>"; };
 		0EC9FCD92993ABAA00A5BE29 /* ImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,7 +156,6 @@
 			children = (
 				0E6C4DFC295E45250092BB94 /* ViewController.swift */,
 				0E6C4DDC295B72310092BB94 /* TapOrHoldVC.swift */,
-				0E6C4DEF295B731F0092BB94 /* TimeAndDate.swift */,
 				0E8CE582295EF87200A5E0B9 /* TipsCalculator.swift */,
 				0E3D84C729841DB800B5D3E1 /* NotesApp */,
 				0E0F4C5F2966D9880090C487 /* PhotosVC.swift */,
@@ -163,6 +166,9 @@
 		0E6C4DED295B72AC0092BB94 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0E862DBE299EB3E700D37A9E /* TapOrHold */,
+				0E862DBB299E281C00D37A9E /* MainMenu */,
+				0E6C4DEF295B731F0092BB94 /* TimeAndDate.swift */,
 				0E3D84BA2982EC4200B5D3E1 /* Notes */,
 				0E6C4DF6295C3F170092BB94 /* TimeAndDateSetup.swift */,
 				0E0F4C5B29657EED0090C487 /* Collection.swift */,
@@ -178,6 +184,22 @@
 				0E3D84B92982E97700B5D3E1 /* NotesApp */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0E862DBB299E281C00D37A9E /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0E862DBC299E284000D37A9E /* MenuButton.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		0E862DBE299EB3E700D37A9E /* TapOrHold */ = {
+			isa = PBXGroup;
+			children = (
+				0E862DBF299EB42400D37A9E /* LableField.swift */,
+			);
+			path = TapOrHold;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +279,7 @@
 				0E3D84C62984028300B5D3E1 /* Date&Time.swift in Sources */,
 				0E8CE583295EF87200A5E0B9 /* TipsCalculator.swift in Sources */,
 				0E6C4DF0295B731F0092BB94 /* TimeAndDate.swift in Sources */,
+				0E862DC0299EB42400D37A9E /* LableField.swift in Sources */,
 				0E0C12A52992886500C60F8D /* AddEditButton.swift in Sources */,
 				0E3D84B82982E8AC00B5D3E1 /* NotesData.swift in Sources */,
 				0E3D84CB29841E7C00B5D3E1 /* AddNoteButtonNote.swift in Sources */,
@@ -270,6 +293,7 @@
 				0E0F4C6229672C550090C487 /* ImagesCell.swift in Sources */,
 				0E3D84CD2984503100B5D3E1 /* BackButton.swift in Sources */,
 				0E0F4C66296848AC0090C487 /* TimeAndDateCell.swift in Sources */,
+				0E862DBD299E284000D37A9E /* MenuButton.swift in Sources */,
 				0E6C4DD9295B72310092BB94 /* AppDelegate.swift in Sources */,
 				0E0F4C5C29657EED0090C487 /* Collection.swift in Sources */,
 				0E0C12A3299243F900C60F8D /* LableLocation.swift in Sources */,
