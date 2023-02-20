@@ -14,14 +14,14 @@ class NotesViewController: UIViewController {
     let addButton = AddNoteButtonNote()
     let editButton = AddEditButton()
     let removeAll = RemoveAllButton()
-    let buttonDismiss = UIButton()
+//    let buttonDismiss = UIButton()
     var tableView = UITableView()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        view.backgroundColor = .customBackgroundColor
         view.addSubview(tableView)
         title = "Notes"
         
@@ -90,17 +90,10 @@ class NotesViewController: UIViewController {
     func constraine(){
         
         NSLayoutConstraint.activate([
-            
-            
             addButton.widthAnchor.constraint(equalToConstant: 45 ),
             addButton.heightAnchor.constraint(equalToConstant: 40),
             addButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
-            
-//            editButton.widthAnchor.constraint(equalToConstant: 35 ),
-//            editButton.heightAnchor.constraint(equalToConstant: 35),
-//            editButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 2),
-//            editButton.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -15),
         ])
     }
               
@@ -109,6 +102,7 @@ class NotesViewController: UIViewController {
        let viewcontroller = ViewController()
         viewcontroller.modalPresentationStyle = .fullScreen
         present(viewcontroller, animated: true) {
+//        dismiss(animated: true)
             print("Back to main")
         }
     }

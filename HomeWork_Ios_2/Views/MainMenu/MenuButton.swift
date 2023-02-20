@@ -20,31 +20,6 @@ class MenuButton: UIButton{
         let multi = multiCornerRadius
         return multi
     }
-    //MARK: - dark shadow
-//        let darkShadow: CALayer = {
-//            let darkShadow = CALayer()
-//            darkShadow.needsDisplayOnBoundsChange = true
-//            darkShadow.shadowColor = UIColor.black.cgColor
-//            darkShadow.shadowOffset = CGSize(width: 10, height: 10)
-//            darkShadow.shadowRadius = 10
-//            darkShadow.shadowOpacity = 0.15
-//            darkShadow.cornerRadius = 10
-//            darkShadow.backgroundColor = UIColor.customBackgroundColor.cgColor
-//            return darkShadow
-//        }()
-       
-    //MARK: - light shadow
-//        let lightShadow: CALayer = {
-//            let lightShadow = CALayer()
-//            lightShadow.needsDisplayOnBoundsChange = true
-//            lightShadow.shadowColor = UIColor.white.cgColor
-//            lightShadow.shadowOffset = CGSize(width: -7, height: -7)
-//            lightShadow.shadowRadius = 10
-//            lightShadow.shadowOpacity = 0.5
-//            lightShadow.cornerRadius = 10
-//            lightShadow.backgroundColor = UIColor.customBackgroundColor.cgColor
-//            return lightShadow
-//        }()
   
     //MARK: - init
     

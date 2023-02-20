@@ -31,9 +31,6 @@ var planetImages = [
                     "Decal",
                     "Milk",
                     "andromeda",
-                    "lancelot"
-                    
-                    
-                    
+                    "lancelot"                  
 ]
 
