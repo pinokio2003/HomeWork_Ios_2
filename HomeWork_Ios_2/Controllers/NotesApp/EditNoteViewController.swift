@@ -183,6 +183,7 @@ class EditNoteViewController: UIViewController, UITextFieldDelegate, CLLocationM
         }
         
         present(viewcontroller, animated: true) {
+//        dismiss(animated: true)
             print("Back to main Тotes")
             
         }

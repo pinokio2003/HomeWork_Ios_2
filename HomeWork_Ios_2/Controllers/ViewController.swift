@@ -166,28 +166,31 @@ class ViewController: UIViewController {
     
     @objc func TipsCalculatorVC(){
 
-        let viewController = TipsCalculator()
+        let viewController = UINavigationController(rootViewController: TipsCalculator())
         tuchFunc(tipsCalculator)
         viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true) {
+        present(viewController, animated: true) { [self] in
+            self.unTuchFunc(tipsCalculator)
             print("Tips Calculator")
         }
     }
     
     @objc func tapOrHoldVC(){
-        let viewController = TapOrHoldVC()
+        let viewController = UINavigationController(rootViewController: TapOrHoldVC())
         tuchFunc(tapOrHold)
         viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true) {
+        present(viewController, animated: true) { [self] in
+            self.unTuchFunc(tapOrHold)
             print("Tap or hold")
         }
     }
     
     @objc func dateAndTimeVC(){
-        let viewController = TimeAndDate()
+        let viewController = UINavigationController(rootViewController: TimeAndDate())
         tuchFunc(dateAndTime)
         viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true) {
+        present(viewController, animated: true) { [self] in
+            self.unTuchFunc(dateAndTime)
             print("Time And Date")
         }
     }
@@ -195,16 +198,19 @@ class ViewController: UIViewController {
         let viewController = UINavigationController(rootViewController: NotesViewController())
         viewController.modalPresentationStyle = .fullScreen
         tuchFunc(notes)
-        present(viewController, animated: true) {
+        present(viewController, animated: true) { [self] in
+            self.unTuchFunc(notes)
         print("Notes")
+            
 
             }
         }
     @objc func photoVC(){
-        let viewController = PhotosVC()
+        let viewController = UINavigationController(rootViewController: PhotosVC())
         tuchFunc(photosButton)
         viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true) {
+        present(viewController, animated: true) { [self] in
+            self.unTuchFunc(photosButton)
         print("Photos")
             }
         }

@@ -22,9 +22,11 @@ extension TimeAndDate{
     @objc func second(){
         lableTime.text = timeSetup()
         lableDate.text = dateSetup()
+        print(timeSetup())
     }
     
     @objc func cancelTimer() {
+        tuchFunc(resetButton)
         timer.invalidate()
         lableTime.text = timeSetup()
         lableDate.text = dateSetup()
@@ -50,10 +52,8 @@ extension TimeAndDate{
     }
     
     @objc func backFunc(){
-       let viewcontroller = ViewController()
-        viewcontroller.modalPresentationStyle = .fullScreen
-        present(viewcontroller, animated: true) {
+        timer.invalidate()
+        dismiss(animated: true)
             print("Back to main")
         }
-    }
 }
