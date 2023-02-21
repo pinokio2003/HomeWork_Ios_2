@@ -123,14 +123,24 @@ class TapOrHoldVC: UIViewController {
         ])
     }
     
+    //MARK: - lable animation:
+//    func animeStart(){
+//        UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+//            self.lable.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+//        }, completion: nil)
+//    }
+//
+//
+//
     // MARK: - timerSettings + objc methods
     var num = 0
     var timer = Timer()
     
     //timer setup
     @objc func timerStart(){
-        
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(second), userInfo: nil, repeats: true)
+        
+//        animeStart() // анимация 
         tuchFunc(buttonStart)
     }
     
@@ -142,6 +152,7 @@ class TapOrHoldVC: UIViewController {
     @objc func timerStop(){
         unTuchFunc(buttonStart)
         timer.invalidate()
+        lable.layer.removeAllAnimations()
     }
     
     @objc func second(){
@@ -160,9 +171,6 @@ class TapOrHoldVC: UIViewController {
         dismiss(animated: true)
             print("Back to main")
         }
-    
-    
-    
     
     //MARK: - Изменение настроек для анимации кнопки:
     @objc func tuchFunc(_ sender: LableShadow){
