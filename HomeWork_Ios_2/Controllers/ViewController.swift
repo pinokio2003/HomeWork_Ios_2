@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         dateAndTimeStp()
         NotesButtonStp()
         photosButtonStp()
+        shevchenkoBtnStp()
         constraints()
     }
     
@@ -130,6 +131,29 @@ class ViewController: UIViewController {
         photosButton.addTarget(self, action: #selector(unTuchFunc), for: .touchUpOutside)
         
     }
+    
+    let shevchenkoBtn: MenuButton = {
+        let shevchenkoBtn = MenuButton()
+        shevchenkoBtn.translatesAutoresizingMaskIntoConstraints = false
+        shevchenkoBtn.setTitle("Shevchenko",for: .normal)
+        shevchenkoBtn.titleLabel?.font = UIFont(name: "Copperplate-Bold" ,size: 30)
+        shevchenkoBtn.layer.backgroundColor = UIColor.clear.cgColor
+        shevchenkoBtn.setTitleColor(.black, for: .normal)
+        shevchenkoBtn.layer.cornerRadius = 47
+        shevchenkoBtn.layer.borderColor = UIColor.black.cgColor
+        MenuButton.multiCornerRadius = 25
+        shevchenkoBtn.titleLabel?.numberOfLines = 0
+        shevchenkoBtn.sizeToFit()
+        return shevchenkoBtn
+    }()
+    
+    func shevchenkoBtnStp(){
+        view.addSubview(shevchenkoBtn)
+        shevchenkoBtn.addTarget(self, action: #selector(shevchenkoVC), for: .touchDown)
+        shevchenkoBtn.addTarget(self, action: #selector(unTuchFunc), for: .touchUpInside)
+        shevchenkoBtn.addTarget(self, action: #selector(unTuchFunc), for: .touchUpOutside)
+        
+    }
     func constraints(){
         NSLayoutConstraint.activate([
             tipsCalculator.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
@@ -160,6 +184,12 @@ class ViewController: UIViewController {
             photosButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
             photosButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
             photosButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        NSLayoutConstraint.activate([
+            shevchenkoBtn.topAnchor.constraint(equalTo: photosButton.bottomAnchor, constant: 25),
+            shevchenkoBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+            shevchenkoBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
+            shevchenkoBtn.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 //MARK: - move to enother VC's func:
@@ -212,6 +242,16 @@ class ViewController: UIViewController {
         present(viewController, animated: true) { [self] in
             self.unTuchFunc(photosButton)
         print("Photos")
+            }
+        }
+    @objc func shevchenkoVC(){
+//        let viewController = UINavigationController(rootViewController: TapBarShevchento())
+        let vcShevchenko = TapBarShevchento()
+        tuchFunc(shevchenkoBtn)
+        vcShevchenko.modalPresentationStyle = .fullScreen
+        present(vcShevchenko, animated: true) { [self] in
+            self.unTuchFunc(shevchenkoBtn)
+        print("Shevchenko")
             }
         }
     

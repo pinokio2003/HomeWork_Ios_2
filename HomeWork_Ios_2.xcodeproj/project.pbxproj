@@ -16,6 +16,10 @@
 		0E0F4C602966D9880090C487 /* ImagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F4C5F2966D9880090C487 /* ImagesVC.swift */; };
 		0E0F4C6229672C550090C487 /* ImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F4C6129672C550090C487 /* ImagesCell.swift */; };
 		0E0F4C66296848AC0090C487 /* TimeAndDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F4C65296848AC0090C487 /* TimeAndDateCell.swift */; };
+		0E37737C29A74FC3005AFCD3 /* TapBarShevchento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E37737B29A74FC3005AFCD3 /* TapBarShevchento.swift */; };
+		0E37737E29A75156005AFCD3 /* ShevchenkoSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E37737D29A75156005AFCD3 /* ShevchenkoSecondViewController.swift */; };
+		0E37738029A7727A005AFCD3 /* FirstViewShevchenko.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E37737F29A7727A005AFCD3 /* FirstViewShevchenko.swift */; };
+		0E37738229A7732D005AFCD3 /* ViewShadowsShevchenko.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E37738129A7732D005AFCD3 /* ViewShadowsShevchenko.swift */; };
 		0E3D84B82982E8AC00B5D3E1 /* NotesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84B72982E8AC00B5D3E1 /* NotesData.swift */; };
 		0E3D84C22983E42D00B5D3E1 /* TableView+Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84C12983E42D00B5D3E1 /* TableView+Note.swift */; };
 		0E3D84C42983E45500B5D3E1 /* CellTableView+Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84C32983E45500B5D3E1 /* CellTableView+Note.swift */; };
@@ -23,6 +27,9 @@
 		0E3D84C929841E4300B5D3E1 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84C829841E4300B5D3E1 /* EditNoteViewController.swift */; };
 		0E3D84CB29841E7C00B5D3E1 /* AddNoteButtonNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84CA29841E7C00B5D3E1 /* AddNoteButtonNote.swift */; };
 		0E3D84CD2984503100B5D3E1 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D84CC2984503100B5D3E1 /* BackButton.swift */; };
+		0E5E52B229A6092D00D18CF1 /* ShevchenkoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E52B129A6092D00D18CF1 /* ShevchenkoViewController.swift */; };
+		0E5E52B429A615AF00D18CF1 /* verseShevchenko.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E52B329A615AF00D18CF1 /* verseShevchenko.swift */; };
+		0E5E52B729A61C5700D18CF1 /* LabelShevchenko.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E52B629A61C5700D18CF1 /* LabelShevchenko.swift */; };
 		0E6C4DD9295B72310092BB94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C4DD8295B72310092BB94 /* AppDelegate.swift */; };
 		0E6C4DDD295B72310092BB94 /* TapOrHoldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C4DDC295B72310092BB94 /* TapOrHoldVC.swift */; };
 		0E6C4DE2295B72320092BB94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6C4DE1295B72320092BB94 /* Assets.xcassets */; };
@@ -50,6 +57,10 @@
 		0E0F4C5F2966D9880090C487 /* ImagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesVC.swift; sourceTree = "<group>"; };
 		0E0F4C6129672C550090C487 /* ImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCell.swift; sourceTree = "<group>"; };
 		0E0F4C65296848AC0090C487 /* TimeAndDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAndDateCell.swift; sourceTree = "<group>"; };
+		0E37737B29A74FC3005AFCD3 /* TapBarShevchento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarShevchento.swift; sourceTree = "<group>"; };
+		0E37737D29A75156005AFCD3 /* ShevchenkoSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShevchenkoSecondViewController.swift; sourceTree = "<group>"; };
+		0E37737F29A7727A005AFCD3 /* FirstViewShevchenko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewShevchenko.swift; sourceTree = "<group>"; };
+		0E37738129A7732D005AFCD3 /* ViewShadowsShevchenko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewShadowsShevchenko.swift; sourceTree = "<group>"; };
 		0E3D84B72982E8AC00B5D3E1 /* NotesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesData.swift; sourceTree = "<group>"; };
 		0E3D84C12983E42D00B5D3E1 /* TableView+Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Note.swift"; sourceTree = "<group>"; };
 		0E3D84C32983E45500B5D3E1 /* CellTableView+Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellTableView+Note.swift"; sourceTree = "<group>"; };
@@ -57,6 +68,9 @@
 		0E3D84C829841E4300B5D3E1 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 		0E3D84CA29841E7C00B5D3E1 /* AddNoteButtonNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteButtonNote.swift; sourceTree = "<group>"; };
 		0E3D84CC2984503100B5D3E1 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		0E5E52B129A6092D00D18CF1 /* ShevchenkoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShevchenkoViewController.swift; sourceTree = "<group>"; };
+		0E5E52B329A615AF00D18CF1 /* verseShevchenko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verseShevchenko.swift; sourceTree = "<group>"; };
+		0E5E52B629A61C5700D18CF1 /* LabelShevchenko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelShevchenko.swift; sourceTree = "<group>"; };
 		0E6C4DD5295B72310092BB94 /* HomeWork_Ios_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork_Ios_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6C4DD8295B72310092BB94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E6C4DDC295B72310092BB94 /* TapOrHoldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapOrHoldVC.swift; sourceTree = "<group>"; };
@@ -103,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				0E3D84B72982E8AC00B5D3E1 /* NotesData.swift */,
-				0EC9FCD92993ABAA00A5BE29 /* ImagesModel.swift */,
 			);
 			path = NotesApp;
 			sourceTree = "<group>";
@@ -127,6 +140,26 @@
 				0E3D84C829841E4300B5D3E1 /* EditNoteViewController.swift */,
 			);
 			path = NotesApp;
+			sourceTree = "<group>";
+		};
+		0E5E52B029A608F300D18CF1 /* Shevchenko */ = {
+			isa = PBXGroup;
+			children = (
+				0E37737B29A74FC3005AFCD3 /* TapBarShevchento.swift */,
+				0E5E52B129A6092D00D18CF1 /* ShevchenkoViewController.swift */,
+				0E37737D29A75156005AFCD3 /* ShevchenkoSecondViewController.swift */,
+			);
+			path = Shevchenko;
+			sourceTree = "<group>";
+		};
+		0E5E52B529A61C2500D18CF1 /* Shevcheno */ = {
+			isa = PBXGroup;
+			children = (
+				0E5E52B629A61C5700D18CF1 /* LabelShevchenko.swift */,
+				0E37737F29A7727A005AFCD3 /* FirstViewShevchenko.swift */,
+				0E37738129A7732D005AFCD3 /* ViewShadowsShevchenko.swift */,
+			);
+			path = Shevcheno;
 			sourceTree = "<group>";
 		};
 		0E6C4DCC295B72310092BB94 = {
@@ -163,6 +196,7 @@
 		0E6C4DEC295B72860092BB94 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0E5E52B029A608F300D18CF1 /* Shevchenko */,
 				0E6C4DEF295B731F0092BB94 /* TimeAndDate.swift */,
 				0E6C4DFC295E45250092BB94 /* ViewController.swift */,
 				0E6C4DDC295B72310092BB94 /* TapOrHoldVC.swift */,
@@ -176,6 +210,7 @@
 		0E6C4DED295B72AC0092BB94 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0E5E52B529A61C2500D18CF1 /* Shevcheno */,
 				0EB5A8DA299F9CDE005D9118 /* Images */,
 				0E862DBE299EB3E700D37A9E /* TapOrHold */,
 				0E862DBB299E281C00D37A9E /* MainMenu */,
@@ -189,7 +224,9 @@
 		0E6C4DEE295B72B90092BB94 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0EC9FCD92993ABAA00A5BE29 /* ImagesModel.swift */,
 				0E3D84B92982E97700B5D3E1 /* NotesApp */,
+				0E5E52B329A615AF00D18CF1 /* verseShevchenko.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,9 +336,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EC9FCDA2993ABAA00A5BE29 /* ImagesModel.swift in Sources */,
+				0E37737C29A74FC3005AFCD3 /* TapBarShevchento.swift in Sources */,
 				0E6C4DF7295C3F170092BB94 /* TimeAndDateSetup.swift in Sources */,
 				0E0F4C602966D9880090C487 /* ImagesVC.swift in Sources */,
 				0E3D84C929841E4300B5D3E1 /* EditNoteViewController.swift in Sources */,
+				0E37738029A7727A005AFCD3 /* FirstViewShevchenko.swift in Sources */,
+				0E5E52B729A61C5700D18CF1 /* LabelShevchenko.swift in Sources */,
 				0E3D84C62984028300B5D3E1 /* Date&Time.swift in Sources */,
 				0E8CE583295EF87200A5E0B9 /* TipsCalculator.swift in Sources */,
 				0E6C4DF0295B731F0092BB94 /* TimeAndDate.swift in Sources */,
@@ -316,14 +356,18 @@
 				0E0F4C5E2965CE800090C487 /* NotesViewController.swift in Sources */,
 				0E0C12A129923B3A00C60F8D /* LocationButton.swift in Sources */,
 				0E6C4DDD295B72310092BB94 /* TapOrHoldVC.swift in Sources */,
+				0E5E52B229A6092D00D18CF1 /* ShevchenkoViewController.swift in Sources */,
 				0E0F4C6229672C550090C487 /* ImagesCell.swift in Sources */,
+				0E37738229A7732D005AFCD3 /* ViewShadowsShevchenko.swift in Sources */,
 				0E3D84CD2984503100B5D3E1 /* BackButton.swift in Sources */,
+				0E37737E29A75156005AFCD3 /* ShevchenkoSecondViewController.swift in Sources */,
 				0E0F4C66296848AC0090C487 /* TimeAndDateCell.swift in Sources */,
 				0E862DBD299E284000D37A9E /* MenuButton.swift in Sources */,
 				0E6C4DD9295B72310092BB94 /* AppDelegate.swift in Sources */,
 				0EB5A8DC299FBAC0005D9118 /* Shadows.swift in Sources */,
 				0E0F4C5C29657EED0090C487 /* Collection.swift in Sources */,
 				0E0C12A3299243F900C60F8D /* LableLocation.swift in Sources */,
+				0E5E52B429A615AF00D18CF1 /* verseShevchenko.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +519,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ZSU.HomeWork-Ios-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -504,7 +548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ZSU.HomeWork-Ios-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

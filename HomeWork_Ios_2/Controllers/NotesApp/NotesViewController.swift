@@ -16,6 +16,7 @@ class NotesViewController: UIViewController {
     let removeAll = RemoveAllButton()
 //    let buttonDismiss = UIButton()
     var tableView = UITableView()
+    var selectedRows = Set<Int>()
     
 
     override func viewDidLoad() {
@@ -84,6 +85,11 @@ class NotesViewController: UIViewController {
         editBarButton.action = #selector(editButtonFunc)
     }
     
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: true)
+        selectedRows.removeAll()
+    }
     
     
     //MARK: - Constraine
@@ -127,16 +133,23 @@ class NotesViewController: UIViewController {
             addButton.isHidden = false
             editBarButton.isEnabled = true
             editBarButton.target = self
-//            editBarButton.action = #selector(removeAllselector)
+            editBarButton.action = #selector(removeAllselector)
         }
         
     }
   //MARK: - Selector remove all
-    @objc func removeAllselector(){
-        
+    @objc func removeAllselector(_ sender: Any){
+//        modelNotes = modelNotes.enumerated().filter { (index, _) -> Bool in
+//            return !selectedRows.contains(index)
+//        }.map { (_, element) -> (titleNote: String, time: String, date: String, countryL: String, city: String) in
+//            return element
+//        }
+//        tableView.deleteRows(at: tableView.indexPathsForSelectedRows ?? [], with: .automatic)
+//        tableView.beginUpdates()
+//        selectedRows.removeAll()
+//        tableView.endUpdates()
         print("All removed")
-//        tableView.setEditing(false, animated: true)
-        
-        }
+        //        tableView.setEditing(false, animated: true)
+    }
 }
 
