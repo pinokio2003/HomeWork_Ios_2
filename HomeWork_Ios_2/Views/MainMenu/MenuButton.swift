@@ -75,6 +75,10 @@ extension UIColor {
                                                     green: 225/255,
                                                     blue: 235/255,
                                                     alpha: 1)
+    static let listColor = UIColor.init(red: 225/255,
+                                                    green: 225/255,
+                                                    blue: 224/255,
+                                                    alpha: 1)
     
 }
 
