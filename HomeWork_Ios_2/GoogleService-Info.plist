@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>357437784553-bofgbsdjkmggv72u04jpcr1rrkd4d0qn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.357437784553-bofgbsdjkmggv72u04jpcr1rrkd4d0qn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDv6IcP0Or1Drhlko9PK1QB2PIYbNSOFaI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>357437784553</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ZSU.HomeWork-Ios-2</string>
+	<key>PROJECT_ID</key>
+	<string>bighomework-e98f2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bighomework-e98f2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:357437784553:ios:cacb2761f099543413cb78</string>
+</dict>
+</plist>
